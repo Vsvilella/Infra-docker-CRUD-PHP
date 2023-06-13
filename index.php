@@ -25,7 +25,7 @@ if($sql->rowCount() > 0){
             <td><?=$clientes['email'];?></td>
             <td>
                 <a href="editar.php?id=<?=$clientes['id'];?>">[ Editar ]</a>
-                <a href="excluir.php?<?=$clientes['id'];?>">[ Excluir ]</a>
+                <a href="excluir.php?id=<?=$clientes['id'];?>">[ Excluir ]</a>
             </td>
 
         </tr>
