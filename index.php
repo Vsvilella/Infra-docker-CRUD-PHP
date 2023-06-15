@@ -42,7 +42,7 @@ if($sql->rowCount() > 0){
             <th>Bairro</th>
             <th>Cidade</th>
             <th>Estado</th>
-            <th>País</th>
+            <th>Paíss</th>
         </tr>
 
         <?php foreach($lista as $adress): ?>
