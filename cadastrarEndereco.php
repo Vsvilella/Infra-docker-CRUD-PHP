@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro de Usuário</title>
+    <title>Cadastro de Endereço</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
             display: block;
             margin-bottom: 10px;
         }
-        input[type="text"], input[type="email"] {
+        input[type="text"] {
             padding: 5px;
             width: 200px;
         }
@@ -36,16 +36,32 @@
     </style>
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
+    <h1>Cadastro de Endereço</h1>
     <form method="POST" action="cadastrar_action.php">
         <label>
-            Nome: <input type="text" name="nome" required>
+            Rua: <input type="text" name="rua" required>
         </label>
         
         <label>
-            E-mail: <input type="email" name="email" required>
+            Bairro: <input type="text" name="bairro" required>
         </label>
         
+        <label>
+            Cidade: <input type="text" name="cidade" required>
+        </label>
+        
+        <label>
+            Estado: <input type="text" name="estado" required>
+        </label>
+
+        <label>
+            Curso: <input type="text" name="curso" required>
+        </label>
+
+        <label>
+            ID Usuário: <input type="text" name="idUser" required>
+        </label>
+
         <input type="submit" value="Salvar">
     </form>
 
