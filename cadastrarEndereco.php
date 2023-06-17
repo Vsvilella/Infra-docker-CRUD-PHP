@@ -37,7 +37,7 @@
 </head>
 <body>
     <h1>Cadastro de Endereço</h1>
-    <form method="POST" action="cadastrar_action.php">
+    <form method="POST" action="cadastrarEndereco_action.php">
         <label>
             Rua: <input type="text" name="rua" required>
         </label>
@@ -53,9 +53,8 @@
         <label>
             Estado: <input type="text" name="estado" required>
         </label>
-
         <label>
-            ID Usuário: <input type="text" name="idUser" required>
+            País: <input type="text" name="pais" required>
         </label>
 
         <input type="submit" value="Salvar">
