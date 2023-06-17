@@ -110,8 +110,8 @@ if($sql->rowCount() > 0){
                 
 
                 <td>
-                    <a href="editar.php?id=<?=$address['id'];?>">[ Editar ]</a>
-                    <a href="editar.php?id=<?=$address['id'];?>">[ Editar ]</a>
+                    <a href="editarAddress.php?id=<?=$address['id'];?>">[ Editar ]</a>
+                    <a href="excluirAddress.php?id=<?=$address['id'];?>">[ Excluir ]</a>
                 </td>    
             </tr>
         <?php endforeach; ?>
