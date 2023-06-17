@@ -26,6 +26,3 @@ if($nome && $email){
     header('location: cadastrar.php');
     exit;
 }
-
-
-?>

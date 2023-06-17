@@ -55,10 +55,6 @@
         </label>
 
         <label>
-            Curso: <input type="text" name="curso" required>
-        </label>
-
-        <label>
             ID Usuário: <input type="text" name="idUser" required>
         </label>
 

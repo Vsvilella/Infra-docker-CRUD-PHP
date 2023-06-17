@@ -61,6 +61,7 @@ $sql = $pdo->query("SELECT * FROM clientes");
             <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
+            <th>Ultima Modificação</th>
             <th>Ações</th>
         </tr>
         <?php foreach($lista as $clientes): ?>
@@ -68,6 +69,8 @@ $sql = $pdo->query("SELECT * FROM clientes");
                 <td><?=$clientes['id'];?></td>
                 <td><?=$clientes['nome'];?></td>
                 <td><?=$clientes['email'];?></td>
+                <td><?=$clientes['last_modified'];?></td>
+
                 <td>
                     <a href="editar.php?id=<?=$clientes['id'];?>">[ Editar ]</a>
                     <a href="excluir.php?id=<?=$clientes['id'];?>">[ Excluir ]</a>
@@ -78,7 +81,13 @@ $sql = $pdo->query("SELECT * FROM clientes");
 
     <hr><br><br>
     <h1>Endereço</h1>
-
+<?php
+$lista2 = [];
+$sql = $pdo->query("SELECT * FROM address");
+if($sql->rowCount() > 0){
+    $lista2 = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -90,18 +99,19 @@ $sql = $pdo->query("SELECT * FROM clientes");
             <th>Ações</th>
         </tr>
 
-        <?php foreach($lista as $adress): ?>
+        <?php foreach($lista2 as $address): ?>
             <tr>
-                <td><?=$adress['id'];?></td>
-                <td><?=$adress['Rua'];?></td>
-                <td><?=$adress['Bairro'];?></td>
-                <td><?=$adress['Cidade'];?></td>
-                <td><?=$adress['Estado'];?></td>
-                <td><?=$adress['País'];?></td>
+                <td><?=$address['id'];?></td>
+                <td><?=$address['rua'];?></td>
+                <td><?=$address['bairro'];?></td>
+                <td><?=$address['cidade'];?></td>
+                <td><?=$address['estado'];?></td>
+                <td><?=$address['pais'];?></td>
+                
 
                 <td>
-                    <a href="editar.php?id=<?=$adress['id'];?>">[ Editar ]</a>
-                    <a href="editar.php?id=<?=$adress['id'];?>">[ Editar ]</a>
+                    <a href="editar.php?id=<?=$address['id'];?>">[ Editar ]</a>
+                    <a href="editar.php?id=<?=$address['id'];?>">[ Editar ]</a>
                 </td>    
             </tr>
         <?php endforeach; ?>
