@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require 'config.php';
 
 $usuario = [];
@@ -18,7 +18,7 @@ if($id){
     header("Location: index.php");
 }
 
-?> -->
+?>
 
 <h1>Editar Usuário</h1>
 <form method="POST" action="editar_action.php">

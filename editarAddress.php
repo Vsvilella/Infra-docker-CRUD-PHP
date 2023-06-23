@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require 'config.php';
 
 $address = [];
@@ -18,7 +18,7 @@ if($id){
     header("Location: index.php");
 }
 
-?> -->
+?>
 
 <h1>Editar Endereço</h1>
 <form method="POST" action="editarAddress_action.php">
