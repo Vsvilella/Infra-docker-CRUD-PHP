@@ -63,10 +63,65 @@ if($sql->rowCount() > 0){
             color: #fff;
             padding: 10px 20px;
             border-radius: 4px;
+            display: inline-block;
+        }
+        .btn-container a.edit-btn,
+        .btn-container a.delete-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        /* Estilos adicionais para a página de Cadastro de Usuário */
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"],
+        button {
+            padding: 5px 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="email"] {
+            padding: 5px;
+            width: 200px;
+        }
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #45a049;
+        }
+        .top-bar,
+        .bottom-bar {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: #008B8B;
+        }
+        .top-bar {
+            top: 0;
+        }
+        .bottom-bar {
+            bottom: 0;
         }
     </style>
 </head>
 <body>
+    <div class="top-bar"></div>
     <div class="container">
         <h1>Listagem de Usuários</h1>
 
@@ -81,13 +136,15 @@ if($sql->rowCount() > 0){
             <?php foreach($lista as $clientes): ?>
                 <tr>
                     <td><?=$clientes['id'];?></td>
-                    <td><?=$clientes['nome'];?></td>
+                    <td class="long-text"><?=$clientes['nome'];?></td>
                     <td><?=$clientes['email'];?></td>
                     <td><?=$clientes['last_modified'];?></td>
 
                     <td>
-                        <a href="editar.php?id=<?=$clientes['id'];?>">[ Editar ]</a>
-                        <a href="excluir.php?id=<?=$clientes['id'];?>">[ Excluir ]</a>
+                        <div class="btn-container">
+                            <a href="editar.php?id=<?=$clientes['id'];?>" class="edit-btn">Editar</a>
+                            <a href="excluir.php?id=<?=$clientes['id'];?>" class="delete-btn">Excluir</a>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -118,9 +175,11 @@ if($sql->rowCount() > 0){
                     <td><?=$address['pais'];?></td>
 
                     <td>
-                        <a href="editarAddress.php?id=<?=$address['id'];?>">[ Editar ]</a>
-                        <a href="excluirAddress.php?id=<?=$address['id'];?>">[ Excluir ]</a>
-                    </td>    
+                        <div class="btn-container">
+                            <a href="editarAddress.php?id=<?=$address['id'];?>" class="edit-btn">Editar</a>
+                            <a href="excluirAddress.php?id=<?=$address['id'];?>" class="delete-btn">Excluir</a>
+                        </div>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>

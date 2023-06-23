@@ -5,7 +5,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            background-color: #f1f1f1;
+            position: relative;
         }
         h1 {
             color: #333;
@@ -33,15 +41,30 @@
         input[type="submit"]:hover, button:hover {
             background-color: #45a049;
         }
+        .top-bar,
+        .bottom-bar {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: #008B8B;
+        }
+        .top-bar {
+            top: 0;
+        }
+        .bottom-bar {
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+    <div class="top-bar"></div>
     <h1>Cadastro de Endereço</h1>
     <form method="POST" action="cadastrarEndereco_action.php">
-    <label>
+        <label>
             Id Usuário: <input type="text" name="id_user" required>
-        </label>    
-    <label>
+        </label>
+        <label>
             Rua: <input type="text" name="rua" required>
         </label>
         
@@ -56,6 +79,7 @@
         <label>
             Estado: <input type="text" name="estado" required>
         </label>
+        
         <label>
             País: <input type="text" name="pais" required>
         </label>
@@ -63,6 +87,7 @@
         <input type="submit" value="Salvar">
     </form>
 
+    <div class="bottom-bar"></div>
     <a href="index.php"><button>Voltar</button></a>
 </body>
 </html>
