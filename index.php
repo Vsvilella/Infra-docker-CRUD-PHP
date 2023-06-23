@@ -1,3 +1,17 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+require 'config.php';
+$lista = [];
+$sql = $pdo->query("SELECT * FROM clientes");
+if($sql->rowCount() > 0){
+    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+$lista2 = [];
+$sql = $pdo->query("SELECT * FROM address");
+if($sql->rowCount() > 0){
+    $lista2 = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,6 +98,7 @@
         <table border="1">
             <tr>
                 <th>ID</th>
+                <th>Id Usuário</th>
                 <th>Rua</th>
                 <th>Bairro</th>
                 <th>Cidade</th>
@@ -95,6 +110,7 @@
             <?php foreach($lista2 as $address): ?>
                 <tr>
                     <td><?=$address['id'];?></td>
+                    <td><?=$address['id_user'];?></td>
                     <td><?=$address['rua'];?></td>
                     <td><?=$address['bairro'];?></td>
                     <td><?=$address['cidade'];?></td>

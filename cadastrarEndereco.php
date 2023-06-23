@@ -38,7 +38,10 @@
 <body>
     <h1>Cadastro de Endereço</h1>
     <form method="POST" action="cadastrarEndereco_action.php">
-        <label>
+    <label>
+            Id Usuário: <input type="text" name="id_user" required>
+        </label>    
+    <label>
             Rua: <input type="text" name="rua" required>
         </label>
         
